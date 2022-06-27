@@ -148,6 +148,7 @@ func makeBuckets(m *dto.Metric) map[string]string {
 // may be nil (in which case the default Transport is used).
 func FetchMetricFamilies(url string, ch chan<- *dto.MetricFamily, transport http.RoundTripper) error {
 	req, err := http.NewRequest("GET", url, nil)
+	req.Close = true
 	if err != nil {
 		close(ch)
 		return fmt.Errorf("creating GET request for URL %q failed: %v", url, err)
