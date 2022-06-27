@@ -1,4 +1,4 @@
-module github.com/prometheus/prom2json
+module github.com/PlasmaNeon/prom2json
 
 require (
 	github.com/alecthomas/units v0.0.0-20190924025748-f65c72e2690d // indirect
